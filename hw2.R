@@ -55,7 +55,7 @@ server <- function(input, output) {
   
   df %>% 
     ggvis(~LE, ~Fert, size := ~pop, key := ~id, fill = ~Region) %>%
-    filter(Year == eval(input_slider(1960, 2014, sep="",
+    filter(Year == eval(input_slider(1960, 2014, value=1960, sep="",
       animate=animationOptions(interval = 500, loop = FALSE)))) %>%
     set_options(height = 400, width = 800) %>%
     add_axis("x", title="Life Expectancy") %>%
